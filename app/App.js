@@ -13,12 +13,35 @@ import {
 } from 'react-native';
 
 import {Quiz} from './screens';
+import {DestinationQueue} from './screens'
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native'; //contains navigator and screen
+import { Screen } from 'react-native-screens';
 
+const Stack = createNativeStackNavigator()
 /*returning the quiz layout and functionality*/
 const App = () => {
   
   return (
-    <Quiz />
+    <NavigationContainer>
+
+      <Stack.Navigator>
+        <Stack.Screen
+          name = "DestinationQueue"
+          component = {DestinationQueue}
+
+        />
+        <Stack.Screen
+          name = "QuizApp"
+          component = {Quiz}
+          />
+
+      </Stack.Navigator>
+    </NavigationContainer>
+
+    
+    // <Quiz/>
+    // <DestinationQueue/>
   );
 }
 

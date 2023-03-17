@@ -1,10 +1,10 @@
 import React, {useState} from 'react'
-import {View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity,Modal, useAnimatedValue, Animated} from 'react-native'
+import {View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity,Modal, useAnimatedValue, Animated, Button} from 'react-native'
 import {COLORS, SIZES} from '../constants'
 import data from '../data/QuizData'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
-const Quiz = () =>{
+const Quiz = ({navigation}) =>{
 
     const allQuestions = data;
     const[currentQuestionIndex, setCurrentQuestionIndex] =  useState(0)
@@ -284,6 +284,11 @@ const Quiz = () =>{
                                     fontSize: 20
                                 }}> Retry Quiz</Text>
                             </TouchableOpacity>
+                            <Button 
+                                title = "Navigate to Destination Queue"
+                                onPress ={() => navigation.navigate("DestinationQueue")}
+
+                            />
                 </View>
                 </View>
             </Modal>
