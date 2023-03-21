@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, {useState} from 'react'
 import {View, Text, SafeAreaView, StatusBar, Image, TouchableOpacity,Modal, useAnimatedValue, Animated, Button} from 'react-native'
 import {COLORS, SIZES} from '../constants'
