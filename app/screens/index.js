@@ -2,10 +2,13 @@
 import Quiz from './Quiz';
 import DestinationQueue from  './DestinationQueue'
 import TourGuide from './TourGuide';
+import Controller from './Controller';
 
 export {
     Quiz,
     DestinationQueue,
-    TourGuide
+    TourGuide,
+    Controller
+
 
 }
