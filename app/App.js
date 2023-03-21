@@ -14,6 +14,7 @@ import {
 
 import {Quiz} from './screens';
 import {DestinationQueue} from './screens'
+import {TourGuide} from './screens'
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native'; //contains navigator and screen
 import { Screen } from 'react-native-screens';
@@ -26,6 +27,11 @@ const App = () => {
     <NavigationContainer>
 
       <Stack.Navigator>
+        <Stack.Screen
+          name = "TourGuide"
+          component = {TourGuide}
+          />
+          
         <Stack.Screen
           name = "DestinationQueue"
           component = {DestinationQueue}
