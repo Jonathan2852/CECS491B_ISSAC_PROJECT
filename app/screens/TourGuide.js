@@ -1,8 +1,8 @@
 import React from "react";
 import {Button, StyleSheet, Text,View, Pressable,Image} from "react-native";
 import {COLORS, SIZES} from '../constants'
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-import Icon from 'react-native-vector-icons/MaterialIcons'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import Icons from 'react-native-vector-icons/MaterialIcons'
 
 const TourGuide = ({navigation}) =>{
     return(
@@ -11,7 +11,8 @@ const TourGuide = ({navigation}) =>{
             <View style= {styles.title_container}>
                 <Text style= {{
                     fontWeight: 'bold',
-                    fontSize: 30,
+                    fontSize: 40,
+                    paddingTop: 30,
                     paddingBottom: 30,
                     color: '#FAEBEFFF'
                     }}>Tour Guide Options</Text>
@@ -33,7 +34,7 @@ const TourGuide = ({navigation}) =>{
             
             <View style ={{flexDirection: 'row'}}>
                 <Pressable style ={styles.option_container}>
-                    {/* <Icon name = 'add-box' size={20}/> */}
+                    <Icon name = 'robot' size={40} color="#000000"/>
                     <Text style = {{
                         fontSize: 30,
                         fontWeight: 'bold',
@@ -44,11 +45,7 @@ const TourGuide = ({navigation}) =>{
                 </Pressable>
                 <View style = {{paddingRight: 10 }}></View>
                 <Pressable style ={styles.help_container}>
-                    <Text style = {{
-                        fontSize: 30,
-                        fontWeight: 'bold',
-                        color: '#000000'
-                    }}> Help</Text>
+                    <Icon name = 'help-box' size ={50} color = '#000000'/>
                 </Pressable>
 
             </View>
@@ -57,20 +54,23 @@ const TourGuide = ({navigation}) =>{
 
             <View style = {{flexDirection: 'row'}}>
                 <Pressable style ={styles.option_container}>
+                <Icon name = 'controller-classic' size={60} color="#000000"/>
                     <Text style = {{
                         fontSize: 30,
                         fontWeight: 'bold',
-                        color: '#000000'
+                        color: '#FAEBEFFF',
+                        padding: 10
 
                     }}> Manuel</Text>
                 </Pressable>
                 <View style = {{paddingRight: 10 }}></View>
                 <Pressable style ={styles.help_container}>
-                    <Text style = {{
+                    <Icon name = 'help-box' size ={50} color = '#000000'/>
+                    {/* <Text style = {{
                         fontSize: 30,
                         fontWeight: 'bold',
                         color: '#000000'
-                    }}> Help</Text>
+                    }}> Help</Text> */}
                 </Pressable>
             </View>
             <Image
@@ -112,16 +112,20 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderRadius: 14,
         height: 100,
-        width: 300,
-        backgroundColor: '#6F8695'
-    },
+        width: 280,
+        backgroundColor: '#6F8695',
+        flexDirection:'row',
+        borderColor:'#FAEBEFFF',
+        borderWidth: 2
+    }, 
     help_container: {
         alignItems:'center',
         justifyContent: 'center',
-        borderColor: '000000',
-        borderWidth: 3,
+        borderColor:'#FAEBEFFF',
+        borderWidth: 2,
         borderRadius: 14,
         height: 100,
-        width: 100
+        width: 100,
+        backgroundColor: '#D4AF37'
     }
 })
