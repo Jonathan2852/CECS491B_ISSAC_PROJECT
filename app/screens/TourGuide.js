@@ -1,10 +1,15 @@
-import React from "react";
-import {Button, StyleSheet, Text,View, Pressable,Image} from "react-native";
+import React, {useState} from "react";
+import { StyleSheet, Text,View, Pressable,Image, Modal} from "react-native";
 import {COLORS, SIZES} from '../constants'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import Icons from 'react-native-vector-icons/MaterialIcons'
 
 const TourGuide = ({navigation}) =>{
+    const[showModal, setShowModal] = useState(false);
+    const [modalVisible, setModalVisible] = useState(false);
+
+   
+
     return(
         <View style = {styles.container}>
             {/* Creates the title */}
@@ -14,24 +19,29 @@ const TourGuide = ({navigation}) =>{
                     fontSize: 40,
                     paddingTop: 30,
                     paddingBottom: 30,
-                    color: '#FAEBEFFF'
+                    color: '#FAEBEFFF',
                     }}>Tour Guide Options</Text>
             </View>
             {/* Creates the view for the direction */}
             <View style ={{
                 alignItems: 'center',
                 paddingBottom: 15,
-                borderColor: '000000',
+                borderColor: '#FFFFFF',
                 borderWidth: 3,
-                borderRadius: 14
+                borderRadius: 6,
+                backgroundColor: '#C3E3EB',
+                width: 400,
+                marginLeft: 7
+                
 
             }}>
-                <Text style={{color: '#FAEBEFFF'}}>Choose any of the following options to manuever the robot.</Text>
+                <Text style={{color: '#000000', fontWeight: 'bold'}}>Choose any of the following options to manuever the robot.</Text>
             </View>
 
             {/* Spacing for the buttons */}
             <View style = {{paddingBottom: 40 }}></View>
             
+            {/* Creates the first row for free roam and the question */}
             <View style ={{flexDirection: 'row'}}>
                 <Pressable style ={styles.option_container}>
                     <Icon name = 'robot' size={40} color="#000000"/>
@@ -49,28 +59,27 @@ const TourGuide = ({navigation}) =>{
                 </Pressable>
 
             </View>
-            
+          
             <View style = {{paddingBottom: 50 }}></View>
 
+             {/* Creates the second row for free manuel and the question*/}
             <View style = {{flexDirection: 'row'}}>
-                <Pressable style ={styles.option_container}>
-                <Icon name = 'controller-classic' size={60} color="#000000"/>
+                <Pressable onPress={()=>navigation.navigate("Controller")} style ={styles.option_container}>
+                <Icon name = 'controller-classic' size={50} color="#000000"/>
                     <Text style = {{
                         fontSize: 30,
                         fontWeight: 'bold',
                         color: '#FAEBEFFF',
                         padding: 10
 
-                    }}> Manuel</Text>
+                    }}> Manuel      </Text>
                 </Pressable>
                 <View style = {{paddingRight: 10 }}></View>
-                <Pressable style ={styles.help_container}>
+                <Pressable onPress={()=>{
+                                setShowModal(true)
+                                }} 
+                                style ={styles.help_container}>
                     <Icon name = 'help-box' size ={50} color = '#000000'/>
-                    {/* <Text style = {{
-                        fontSize: 30,
-                        fontWeight: 'bold',
-                        color: '#000000'
-                    }}> Help</Text> */}
                 </Pressable>
             </View>
             <Image
@@ -87,11 +96,8 @@ const TourGuide = ({navigation}) =>{
                  }}
                  resizeMode = {'contain'}
                  />
-
-        
-        
-
         </View>
+
   
     )
 }
@@ -116,7 +122,8 @@ const styles = StyleSheet.create({
         backgroundColor: '#6F8695',
         flexDirection:'row',
         borderColor:'#FAEBEFFF',
-        borderWidth: 2
+        borderWidth: 2,
+        marginLeft: 10
     }, 
     help_container: {
         alignItems:'center',
