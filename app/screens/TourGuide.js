@@ -2,11 +2,12 @@ import React, {useState} from "react";
 import { StyleSheet, Text,View, Pressable,Image, Modal} from "react-native";
 import {COLORS, SIZES} from '../constants'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
-import Icons from 'react-native-vector-icons/MaterialIcons'
+
 
 const TourGuide = ({navigation}) =>{
+    const[actionTriggered,setActionTriggered] =  useState(false)
     const[showModal, setShowModal] = useState(false);
-    const [modalVisible, setModalVisible] = useState(false);
+    
 
    
 
@@ -54,7 +55,11 @@ const TourGuide = ({navigation}) =>{
                     }}> Free-Roam</Text>
                 </Pressable>
                 <View style = {{paddingRight: 10 }}></View>
-                <Pressable style ={styles.help_container}>
+                <Pressable onPress={()=>{
+                                setShowModal(true)
+                                setActionTriggered('FREEROAM')
+                                }}
+                                style = {styles.help_container}>
                     <Icon name = 'help-box' size ={50} color = '#000000'/>
                 </Pressable>
 
@@ -77,6 +82,7 @@ const TourGuide = ({navigation}) =>{
                 <View style = {{paddingRight: 10 }}></View>
                 <Pressable onPress={()=>{
                                 setShowModal(true)
+                                setActionTriggered('MANUEL')
                                 }} 
                                 style ={styles.help_container}>
                     <Icon name = 'help-box' size ={50} color = '#000000'/>
@@ -96,7 +102,95 @@ const TourGuide = ({navigation}) =>{
                  }}
                  resizeMode = {'contain'}
                  />
+            <Modal
+            animationType = "fade"
+            visible = {showModal}>
+                {actionTriggered === 'FREEROAM' ? 
+                    //    Creates the first view which is the background
+                        <View style = {{
+                            flex: 1,
+                            backgroundColor: COLORS.background,
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                        }}>
+                            {/* //Creates the second view which is the white one */}
+                            <View style = {{
+                                backgroundColor: COLORS.white,
+                                width: '90%',
+                                borderRadius: 20,
+                                padding: 20,
+                                alignItems: 'center'
+                                }}>
+                                    <Text style ={{
+                                        fontSize:30,
+                                        fontWeight: 'bold',
+                                        color: '#000000',
+                                        paddingBottom: 20
+                                    }}>Free-Roam Navigation</Text>
+
+                                    <Image source ={{uri: 'https://i.guim.co.uk/img/media/6dd47064b1e15e9311d44de75c3e760c3755bd9f/0_0_3000_1801/master/3000.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=13bacf77caf682b823d29036cf642b3f'}}
+                                        style ={{width: 130, height: 100,borderRadius:30}}/>
+                                    <View style ={{paddingBottom: 20 }}></View>
+                                    <Text style ={{
+                                        textAlign:'left',
+                                        color: '#000000',
+                                        fontSize: 20,
+                                        paddingBottom: 25
+                                    }}> Free-roam navigation means that the robot is in full control of itself, it is 
+                                    able to freely roam the enviornment and navigate users on itself without the assist
+                                    of a user's control. 
+                                    </Text>
+                                    <View>
+                                        <Pressable onPress={()=>{setShowModal(false)}} >
+                                            <Icon name = "backspace" size={40} color='red'/>
+                                         </Pressable>
+                                     </View>
+                            </View>
+                        </View>:
+                    actionTriggered === 'MANUEL' ?
+                    <View style = {{
+                        flex: 1,
+                        backgroundColor: COLORS.background,
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                    }}>
+                        {/* //Creates the second view which is the white one */}
+                        <View style = {{
+                            backgroundColor: COLORS.white,
+                            width: '90%',
+                            borderRadius: 20,
+                            padding: 20,
+                            alignItems: 'center'
+                            }}>
+                                <Text style ={{
+                                    fontSize:30,
+                                    fontWeight: 'bold',
+                                    color: '#000000',
+                                    paddingBottom: 20
+                                }}>Manuel Navigation</Text>
+
+                                <Image source ={{uri: 'https://cdn.windowsreport.com/wp-content/uploads/2019/05/xbox-controller-goes-to-player-2-on-pc.jpg'}}
+                                    style ={{width: 200, height: 140,borderRadius:30}}/>
+                                <View style ={{paddingBottom: 20 }}></View>
+                                <Text style ={{
+                                    textAlign:'left',
+                                    color: '#000000',
+                                    fontSize: 20,
+                                    paddingBottom: 25
+                                }}> Manuel navigation allows the user to gain full control of the robot, manuevring the 
+                                robot wherever the user desires.
+                                </Text>
+                                <View>
+                                    <Pressable onPress={()=>{setShowModal(false)}} >
+                                        <Icon name = "backspace" size={40} color='red'/>
+                                     </Pressable>
+                                 </View>
+                        </View>
+                        </View>:
+                        null }
+            </Modal>
         </View>
+        
 
   
     )
