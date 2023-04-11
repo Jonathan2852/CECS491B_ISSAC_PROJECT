@@ -11,8 +11,9 @@ import {
   SafeAreaView,
   Text,
   VersionCheck,
+  View,
+  StyleSheet,
 } from 'react-native';
-
 import {Quiz} from './screens';
 import {DestinationQueue} from './screens';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -22,6 +23,8 @@ import { Screen } from 'react-native-screens';
 //krimika's controller thing:
 import {Controller} from './screens';
 
+
+
 const Stack = createNativeStackNavigator()
 /*returning the quiz layout and functionality*/
 const App = () => {
@@ -30,28 +33,20 @@ const App = () => {
     <NavigationContainer>
 
       <Stack.Navigator>
-        <Stack.Screen
-          name = "DestinationQueue"
-          component = {DestinationQueue}
-
-        />
-        <Stack.Screen
-          name = "QuizApp"
-          component = {Quiz}
-        />
-        
-        <Stack.Screen 
-          name = "Controller"
-          component = {Controller} />
+      <Stack.Screen name = "DestinationQueue" component = {DestinationQueue}/>
+      <Stack.Screen name = "QuizApp" component = {Quiz} />
+      <Stack.Screen name = "Controller" component = {Controller} />
       </Stack.Navigator>
     </NavigationContainer>
-
-    
-    // <Quiz/>
-    // <DestinationQueue/>
   );
 }
 
+const styles = StyleSheet.create({
+  testing: {
+      fontFamily: 'RobotoCondensed-Light',
+      fontSize: 50,
+  }
+});
 
 
 export default App;
