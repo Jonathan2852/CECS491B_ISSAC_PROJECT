@@ -13,7 +13,7 @@ import {
   VersionCheck,
 } from 'react-native';
 
-import {Quiz} from './screens';
+import {HomeScreen, Quiz} from './screens';
 import {DestinationQueue} from './screens'
 import {TourGuide} from './screens'
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -31,6 +31,11 @@ const App = () => {
     <NavigationContainer>
 
       <Stack.Navigator>
+        <Stack.Screen
+          name = "HomeScreen"
+          component={HomeScreen}
+        
+          />
         <Stack.Screen
           name = "TourGuide"
           component = {TourGuide}
