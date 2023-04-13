@@ -12,7 +12,7 @@ export const COLORS = {
 
     black: '#171717',
     white: '#FFFFFF',
-    background: "#252C4A"
+    background: "#1b3646"
 }
 
 export const SIZES = {
