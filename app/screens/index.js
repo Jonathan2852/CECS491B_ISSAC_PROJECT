@@ -2,14 +2,14 @@
 import Quiz from './Quiz';
 import DestinationQueue from  './DestinationQueue'
 import TourGuide from './TourGuide';
-import Controller from './Controller';
+import Controller2 from './Controller2';
 import HomeScreen from './HomeScreen';
 
 export {
     Quiz,
     DestinationQueue,
     TourGuide,
-    Controller,
+    Controller2,
     HomeScreen
 
 

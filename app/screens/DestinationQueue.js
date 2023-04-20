@@ -63,6 +63,11 @@ const DestinationQueue = ({navigation}) => {
           title = "Navigate to Quiz"
           onPress ={() => navigation.navigate("QuizApp")}
           />
+
+        <Button
+          title = "Navigate to Controller"
+          onPress ={() => navigation.navigate("Controller")}
+          />
           
       </View>
       <ScrollView>

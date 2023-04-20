@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, {useState} from "react";
 import { StyleSheet, Text,View, Pressable,Image, Modal} from "react-native";
 import {COLORS, SIZES} from '../constants'
@@ -69,7 +70,7 @@ const TourGuide = ({navigation}) =>{
 
              {/* Creates the second row for free manuel and the question*/}
             <View style = {{flexDirection: 'row'}}>
-                <Pressable onPress={()=>navigation.navigate("Controller")} style ={styles.option_container}>
+                <Pressable onPress={()=>navigation.navigate("Controller2")} style ={styles.option_container}>
                 <Icon name = 'controller-classic' size={50} color="#000000"/>
                     <Text style = {{
                         fontSize: 30,

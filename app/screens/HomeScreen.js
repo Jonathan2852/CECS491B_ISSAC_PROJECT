@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import {COLORS, SIZES} from '../constants'
 import React, {useState} from "react";
 import { StyleSheet, Text,View, Pressable,Image, Modal,ScrollView} from "react-native";
