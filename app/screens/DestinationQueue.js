@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React, { useState } from 'react';
 import {ImageBackground, View, Text, TextInput, TouchableOpacity, StyleSheet, ScrollView, Button } from 'react-native';
 
@@ -128,7 +129,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginVertical: 20,
-    color : '#000000'
+    color : '#000000',
   },
   formContainer: {
     marginVertical: 20,
