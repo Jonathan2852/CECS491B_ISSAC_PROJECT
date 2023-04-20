@@ -21,7 +21,7 @@ import { NavigationContainer } from '@react-navigation/native'; //contains navig
 import { Screen } from 'react-native-screens';
 
 //krimika's controller thing:
-import {Controller} from './screens';
+import {Controller2} from './screens';
 
 const Stack = createNativeStackNavigator()
 /*returning the quiz layout and functionality*/
@@ -52,8 +52,8 @@ const App = () => {
         />
         
         <Stack.Screen 
-          name = "Controller"
-          component = {Controller} />
+          name = "Controller2"
+          component = {Controller2} />
       </Stack.Navigator>
     </NavigationContainer>
 
