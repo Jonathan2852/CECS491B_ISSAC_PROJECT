@@ -19,6 +19,7 @@ import {TourGuide} from './screens'
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native'; //contains navigator and screen
 import { Screen } from 'react-native-screens';
+import{Bluetooth} from './screens';
 
 //krimika's controller thing:
 import {Controller2} from './screens';
@@ -54,6 +55,10 @@ const App = () => {
         <Stack.Screen 
           name = "Controller2"
           component = {Controller2} />
+
+        <Stack.Screen 
+          name = "Bluetooth"
+          component = {Bluetooth} />
       </Stack.Navigator>
     </NavigationContainer>
 
