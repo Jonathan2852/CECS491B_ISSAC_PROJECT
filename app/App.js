@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 
 import {HomeScreen, Quiz} from './screens';
-import {DestinationQueue} from './screens'
+import {DestinationQueue,DestinationControl} from './screens'
 import {TourGuide} from './screens'
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native'; //contains navigator and screen
@@ -50,6 +50,11 @@ const App = () => {
         <Stack.Screen
           name = "QuizApp"
           component = {Quiz}
+        />
+
+        <Stack.Screen
+          name = "DestinationControl"
+          component = {DestinationControl}
         />
         
         <Stack.Screen 
