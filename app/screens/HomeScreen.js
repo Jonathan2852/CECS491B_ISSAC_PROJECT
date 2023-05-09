@@ -28,6 +28,13 @@ const HomeScreen = ({navigation}) => {
         </View>
 
         <View style = {styles.button_container}>
+            <Pressable onPress={()=>navigation.navigate("DestinationControl")} style= {styles.option_container} >
+                 <Icon name = 'human-queue' size={40}/>
+                <Text style ={styles.text_style}>  Destination Control </Text>
+            </Pressable>
+        </View>
+
+        <View style = {styles.button_container}>
             <Pressable onPress={()=>navigation.navigate("QuizApp")} style = {styles.option_container}>
                  <Icon name = 'nintendo-game-boy' size={40}/>
                 <Text style = {styles.text_style}> Learning Assessment</Text>
@@ -42,7 +49,7 @@ const HomeScreen = ({navigation}) => {
         </View>
 
         <View style = {styles.button_container}>
-            <Pressable style = {styles.option_container}>
+            <Pressable onPress={()=>navigation.navigate("Bluetooth")} style = {styles.option_container}>
                 <Icon name = 'bluetooth' size={40} />
                 <Text style = {styles.text_style}> Bluetooth</Text>
             </Pressable>

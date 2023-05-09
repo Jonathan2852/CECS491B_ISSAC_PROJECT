@@ -14,12 +14,13 @@ import {
 } from 'react-native';
 
 import {HomeScreen, Quiz} from './screens';
-import {DestinationQueue} from './screens'
+import {DestinationQueue,DestinationControl} from './screens'
 import {TourGuide} from './screens'
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native'; //contains navigator and screen
 import { Screen } from 'react-native-screens';
 import {firebase} from './screens/config';
+import{Bluetooth} from './screens';
 
 //krimika's controller thing:
 import {Controller2} from './screens';
@@ -104,31 +105,3 @@ export default () => {
     </NavigationContainer>
   )
 }
-// /*returning the quiz layout and functionality*/
-// const App = () => {
-  
-//   return (
-//     <NavigationContainer>
-
-//       <Stack.Navigator>
-//         <Stack.Screen name="Login" component={Login} />
-//         <Stack.Screen name = "HomeScreen" component={HomeScreen}/>
-//         <Stack.Screen name = "TourGuide" component = {TourGuide}/>
-//         <Stack.Screen name = "DestinationQueue" component = {DestinationQueue}/>
-//         <Stack.Screen name = "QuizApp" component = {Quiz}/>
-//         <Stack.Screen name = "Controller2" component = {Controller2} />
-        
-//         <Stack.Screen name="Registration" component={Registration} />
-//         <Stack.Screen name="Dashboard" component={Dashboard} />
-//       </Stack.Navigator>
-//     </NavigationContainer>
-
-    
-//     // <Quiz/>
-//     // <DestinationQueue/>
-//   );
-// }
-
-
-
-// export default App;
