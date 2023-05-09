@@ -43,12 +43,12 @@ export default class Controller extends React.Component {
             }}
           />
         </View>
-        <Button
+        {/* <Button
           title="Controller"
           onPress={() => {
             this.props.navigation.navigate('Controller'); //#FIXME!
           }}
-        />
+        /> */}
       </View>
     );
   }

@@ -1,10 +1,11 @@
 /* eslint-disable prettier/prettier */
 import Quiz from './Quiz';
-import DestinationQueue from  './DestinationQueue'
+import DestinationQueue from  './DestinationQueue';
 import TourGuide from './TourGuide';
-import Controller from './Controller';
+import Controller2 from './Controller2';
 import HomeScreen from './HomeScreen';
 import DestinationControl from './DestinationControl';
+import Bluetooth from './Bluetooth';
 
 export {
     Quiz,
@@ -12,7 +13,10 @@ export {
     TourGuide,
     Controller,
     HomeScreen,
-    DestinationControl
+    DestinationControl,
+    Controller2,
+    HomeScreen,
+    Bluetooth,
 
 
 }

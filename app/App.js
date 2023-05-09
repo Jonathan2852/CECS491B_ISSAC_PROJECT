@@ -19,9 +19,10 @@ import {TourGuide} from './screens'
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native'; //contains navigator and screen
 import { Screen } from 'react-native-screens';
+import{Bluetooth} from './screens';
 
 //krimika's controller thing:
-import {Controller} from './screens';
+import {Controller2} from './screens';
 
 const Stack = createNativeStackNavigator()
 /*returning the quiz layout and functionality*/
@@ -57,8 +58,12 @@ const App = () => {
         />
         
         <Stack.Screen 
-          name = "Controller"
-          component = {Controller} />
+          name = "Controller2"
+          component = {Controller2} />
+
+        <Stack.Screen 
+          name = "Bluetooth"
+          component = {Bluetooth} />
       </Stack.Navigator>
     </NavigationContainer>
 
