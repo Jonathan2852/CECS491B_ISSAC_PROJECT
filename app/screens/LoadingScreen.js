@@ -12,7 +12,7 @@ const LoadingScreen = ({navigation}) => {
             <ImageBackground source = {image} resizeMode = "cover" style = {styles.image}>
 
             <View style = {styles.button_container}>
-            <Pressable onPress={()=>navigation.navigate("HomeScreen")} style= {styles.option_container} >
+            <Pressable onPress={()=>navigation.navigate("Login")} style= {styles.option_container} >
                 <Text style ={styles.text_style}> Click here to Begin </Text>
             </Pressable>
         </View>
