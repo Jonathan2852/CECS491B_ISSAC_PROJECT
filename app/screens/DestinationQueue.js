@@ -4,7 +4,7 @@ import {ImageBackground, View, Text, TextInput, TouchableOpacity, StyleSheet, Sc
 
 // function for the entire app
 const DestinationQueue = ({navigation}) => {
-  const image = {uri: 'https://cdn.wallpapersafari.com/94/89/8Rbnid.jpg'}
+  const image = {uri: ''}
   const [locationName, setLocationName] = useState('');
   const [locations, setLocations] = useState([]);
 
@@ -37,7 +37,7 @@ const DestinationQueue = ({navigation}) => {
   */
   return (
     <View style={styles.container}>
-      <ImageBackground source = {image} resizeMode = "cover" style = {styles.image}>
+      <ImageBackground /*source = {image} resizeMode = "cover" style = {styles.image}*/>
       <Text style={styles.header}>Destination Queue</Text>
       <View style={styles.formContainer}>
         <Text style={styles.formHeader}>Add Location</Text>
@@ -59,7 +59,7 @@ const DestinationQueue = ({navigation}) => {
               <Text style={styles.submitButtonText}>Delete</Text>
             </TouchableOpacity>
         </View> 
-        <Button
+        {/* <Button
           title = "Navigate to Quiz"
           onPress ={() => navigation.navigate("QuizApp")}
           />
@@ -67,7 +67,7 @@ const DestinationQueue = ({navigation}) => {
         <Button
           title = "Navigate to Controller"
           onPress ={() => navigation.navigate("Controller")}
-          />
+          /> */}
           
       </View>
       <ScrollView>

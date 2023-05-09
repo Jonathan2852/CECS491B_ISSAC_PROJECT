@@ -20,6 +20,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native'; //contains navigator and screen
 import { Screen } from 'react-native-screens';
 import{Bluetooth} from './screens';
+import {LoadingScreen} from './screens';
 
 //krimika's controller thing:
 import {Controller2} from './screens';
@@ -31,7 +32,12 @@ const App = () => {
   return (
     <NavigationContainer>
 
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen
+          name = "LoadingScreen"
+          component={LoadingScreen}
+        
+          />
         <Stack.Screen
           name = "HomeScreen"
           component={HomeScreen}
