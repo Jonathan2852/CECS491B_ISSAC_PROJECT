@@ -10,7 +10,7 @@ const HomeScreen = ({navigation}) => {
     <ScrollView>
     <View style = {styles.container}>
         <View style = {styles.title_container}>
-            <Icon name = 'home-circle' size={50} color = "#FFFFFF"/>
+            <Icon name = 'home-circle' size={50} color = "#FAEBEFFF"/>
             <Text style= {{
                         fontWeight: 'bold',
                         fontSize: 40,
