@@ -42,7 +42,7 @@ const HomeScreen = ({navigation}) => {
         </View>
 
         <View style = {styles.button_container}>
-            <Pressable style = {styles.option_container}>
+            <Pressable onPress={()=>navigation.navigate("Bluetooth")} style = {styles.option_container}>
                 <Icon name = 'bluetooth' size={40} />
                 <Text style = {styles.text_style}> Bluetooth</Text>
             </Pressable>
