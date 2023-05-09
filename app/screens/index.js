@@ -15,7 +15,6 @@ export {
     HomeScreen,
     DestinationControl,
     Controller2,
-    HomeScreen,
     Bluetooth,
 
 
