@@ -11,7 +11,6 @@ export {
     Quiz,
     DestinationQueue,
     TourGuide,
-    Controller,
     HomeScreen,
     DestinationControl,
     Controller2,
