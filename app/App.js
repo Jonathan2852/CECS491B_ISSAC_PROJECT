@@ -21,6 +21,7 @@ import { NavigationContainer } from '@react-navigation/native'; //contains navig
 import { Screen } from 'react-native-screens';
 import {firebase} from './screens/config';
 import{Bluetooth} from './screens';
+import {LoadingScreen} from './screens';
 
 //krimika's controller thing:
 import {Controller2} from './screens';
@@ -49,7 +50,8 @@ function App(){
   if (initializing) return null;
   if (!user){
     return (
-      <Stack.Navigator>
+      <Stack.Navigator >
+        <Stack.Screen name = "LoadingScreen" component={LoadingScreen}/>
         <Stack.Screen 
         name="Login" 
         component={Login}
@@ -88,8 +90,20 @@ function App(){
     );
   }
   return (
-    <Stack.Navigator>
-      <Stack.Screen name = "HomeScreen" component={HomeScreen}/>
+    <Stack.Navigator screenOptions={{headerShown: true}}>
+      
+      <Stack.Screen name = "HomeScreen" component={HomeScreen} 
+      options={{
+        headerTitle: () => <Header name="Home Screen" />,
+        headerStyle: {
+          height: 150,
+          borderBottomLeftRadius:50,
+          borderBottomRightRadius:50,
+          backgroundColor:'#6F8695',
+          shadowColor: '#000',
+          elevation:25
+        }
+      }} />
         <Stack.Screen name = "TourGuide" component = {TourGuide}/>
         <Stack.Screen name = "DestinationQueue" component = {DestinationQueue}/>
         <Stack.Screen name = "QuizApp" component = {Quiz}/>

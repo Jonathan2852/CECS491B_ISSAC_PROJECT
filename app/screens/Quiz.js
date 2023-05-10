@@ -285,11 +285,11 @@ const Quiz = ({navigation}) =>{
                                     fontSize: 20
                                 }}> Retry Quiz</Text>
                             </TouchableOpacity>
-                            <Button 
+                            {/* <Button 
                                 title = "Navigate to Destination Queue"
                                 onPress ={() => navigation.navigate("DestinationQueue")}
 
-                            />
+                            /> */}
                 </View>
                 </View>
             </Modal>
