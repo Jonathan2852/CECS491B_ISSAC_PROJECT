@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         alignItems:'center',
-        marginTop:100,
+        paddingTop:100,
     },
     textInput: {
         paddingTop:20,
