@@ -50,7 +50,7 @@ function App(){
   if (initializing) return null;
   if (!user){
     return (
-      <Stack.Navigator >
+      <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name = "LoadingScreen" component={LoadingScreen}/>
         <Stack.Screen 
         name="Login" 

@@ -4,18 +4,15 @@ import{ ImageBackground, StyleSheet, View, Text, Pressable } from 'react-native'
 
 const LoadingScreen = ({navigation}) => {
 
-    const image = {uri: 'https://raw.githubusercontent.com/daxile6/CECS491B_ISSAC_PROJECT/main/app/assets/images/nanobot_homepage_2.png'}
+    const image = {uri: 'https://raw.githubusercontent.com/daxile6/CECS491B_ISSAC_PROJECT/main/app/assets/images/LoadingPage_image.png'}
 
     return(
         <View style={styles.container}>
             <ImageBackground source={image} resizeMode="cover" style={styles.image}>
                 <View style={styles.button_container}>
                     <Pressable onPress={() => navigation.navigate("Login")} style={styles.option_container}>
-                        <Text style={styles.text_style}> Click here to Begin </Text>
+                        <Text style={styles.text_style}> Click Here to Begin </Text>
                     </Pressable>
-                </View>
-                <View>
-                    <Text style={styles.text_style}> I.S.S.A.C </Text>
                 </View>
             </ImageBackground>
         </View>
@@ -25,10 +22,11 @@ const LoadingScreen = ({navigation}) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        height: '100%'
+        height: '100%',
+        backgroundColor: '#000000'
     },
     image: {
-        flex: 1,
+        flex: 1.05,
         width: '100%',
         height: '100%',
     },
