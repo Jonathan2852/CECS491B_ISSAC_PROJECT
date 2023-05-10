@@ -61,7 +61,7 @@ function App(){
             height: 150,
             borderBottomLeftRadius:50,
             borderBottomRightRadius:50,
-            backgroundColor:'#00e4d0',
+            backgroundColor:'#fff',
             shadowColor: '#000',
             elevation:25
           }
@@ -90,9 +90,20 @@ function App(){
     );
   }
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator screenOptions={{headerShown: true}}>
       
-      <Stack.Screen name = "HomeScreen" component={HomeScreen}/>
+      <Stack.Screen name = "HomeScreen" component={HomeScreen} 
+      options={{
+        headerTitle: () => <Header name="Home Screen" />,
+        headerStyle: {
+          height: 150,
+          borderBottomLeftRadius:50,
+          borderBottomRightRadius:50,
+          backgroundColor:'#6F8695',
+          shadowColor: '#000',
+          elevation:25
+        }
+      }} />
         <Stack.Screen name = "TourGuide" component = {TourGuide}/>
         <Stack.Screen name = "DestinationQueue" component = {DestinationQueue}/>
         <Stack.Screen name = "QuizApp" component = {Quiz}/>
