@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
 import{ ImageBackground, StyleSheet, View, Text, Pressable } from 'react-native';
 
@@ -12,6 +13,9 @@ const LoadingScreen = ({navigation}) => {
                     <Pressable onPress={() => navigation.navigate("Login")} style={styles.option_container}>
                         <Text style={styles.text_style}> Click here to Begin </Text>
                     </Pressable>
+                </View>
+                <View>
+                    <Text style={styles.text_style}> I.S.S.A.C </Text>
                 </View>
             </ImageBackground>
         </View>
@@ -43,6 +47,7 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         fontSize: 20,
         fontFamily: 'Geo-Regular', //FIXME
+        justifyContent: 'flex-end'
     },
 });
 
