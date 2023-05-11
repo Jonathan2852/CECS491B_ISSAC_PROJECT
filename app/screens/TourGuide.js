@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React, {useState} from "react";
-import { StyleSheet, Text,View, Pressable,Image, Modal} from "react-native";
+import { StyleSheet, Text,View, Pressable,Image, Modal, ImageBackground} from "react-native";
 import {COLORS, SIZES} from '../constants'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
@@ -8,12 +8,14 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 const TourGuide = ({navigation}) =>{
     const[actionTriggered,setActionTriggered] =  useState(false)
     const[showModal, setShowModal] = useState(false);
-    
+    const image = {uri: 'https://raw.githubusercontent.com/daxile6/CECS491B_ISSAC_PROJECT/main/app/assets/images/genericbackground.png'}
+
 
    
 
     return(
         <View style = {styles.container}>
+            <ImageBackground source={image}  style = {styles.backGroundImage}>
             {/* Creates the title */}
             <View style= {styles.title_container}>
                 <Text style= {{
@@ -23,21 +25,6 @@ const TourGuide = ({navigation}) =>{
                     paddingBottom: 30,
                     color: '#FAEBEFFF',
                     }}>Tour Guide Options</Text>
-            </View>
-            {/* Creates the view for the direction */}
-            <View style ={{
-                alignItems: 'center',
-                paddingBottom: 15,
-                borderColor: '#FFFFFF',
-                borderWidth: 3,
-                borderRadius: 6,
-                backgroundColor: '#C3E3EB',
-                width: 400,
-                marginLeft: 7
-                
-
-            }}>
-                <Text style={{color: '#000000', fontWeight: 'bold'}}>Choose any of the following options to manuever the robot.</Text>
             </View>
 
             {/* Spacing for the buttons */}
@@ -51,7 +38,7 @@ const TourGuide = ({navigation}) =>{
                         fontSize: 30,
                         fontWeight: 'bold',
                         padding: 10,
-                        color: '#FAEBEFFF'
+                        color: '#FAEBEFFF',
 
                     }}> Free-Roam</Text>
                 </Pressable>
@@ -66,7 +53,7 @@ const TourGuide = ({navigation}) =>{
 
             </View>
           
-            <View style = {{paddingBottom: 50 }}></View>
+            <View style = {{paddingBottom: 70 }}></View>
 
              {/* Creates the second row for free manuel and the question*/}
             <View style = {{flexDirection: 'row'}}>
@@ -190,6 +177,7 @@ const TourGuide = ({navigation}) =>{
                         </View>:
                         null }
             </Modal>
+            </ImageBackground>
         </View>
         
 
@@ -201,11 +189,11 @@ export default TourGuide;
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: COLORS.background,
-        flex:1
+        flex:1,
     },
     title_container: {
         alignItems: 'center',
+        padding: 20,
         
     },
     option_container:  {
@@ -218,7 +206,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         borderColor:'#FAEBEFFF',
         borderWidth: 2,
-        marginLeft: 10
+        marginLeft: 10,
     }, 
     help_container: {
         alignItems:'center',
@@ -229,5 +217,8 @@ const styles = StyleSheet.create({
         height: 100,
         width: 100,
         backgroundColor: '#D4AF37'
-    }
+    },
+    backGroundImage: {
+        flex: 1,
+    },
 })
