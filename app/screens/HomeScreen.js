@@ -1,26 +1,53 @@
 /* eslint-disable prettier/prettier */
 import {COLORS, SIZES} from '../constants'
 import React, {useState} from "react";
-import { StyleSheet, Text,View, Pressable,Image, Modal,ScrollView} from "react-native";
+import { StyleSheet, Text,View, Pressable,Image, Modal,ScrollView, ImageBackground} from "react-native";
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 
 const HomeScreen = ({navigation}) => {
+
+    const image = {uri: 'https://raw.githubusercontent.com/daxile6/CECS491B_ISSAC_PROJECT/main/app/assets/images/image.png'}
     return(
-    <ScrollView>
+    // <ScrollView>
     <View style = {styles.container}>
-        <View style = {styles.title_container}>
-            <Icon name = 'home-circle' size={50} color = "#FAEBEFFF"/>
-            <Text style= {{
-                        fontWeight: 'bold',
-                        fontSize: 40,
-                        paddingTop: 30,
-                        paddingBottom: 30,
-                        color: '#FAEBEFFF',
-                        }}> Home</Text>
-        </View>
-        
-        <View style = {styles.button_container}>
+            <ImageBackground source={image} resizeMode='cover' style = {styles.backGroundImage}>
+
+            <View style = {styles.title_container}>
+            </View>
+                
+                <View style={styles.button_container}>
+                    <Pressable onPress={() => navigation.navigate("DestinationQueue")} style={styles.option_container}>
+                        <Text style={styles.text_style}> Destination Queue </Text>
+                    </Pressable>
+                </View>
+                <View style={styles.button_container}>
+                    <Pressable onPress={() => navigation.navigate("DestinationControl")} style={styles.option_container}>
+                        <Text style={styles.text_style}> Destination Control </Text>
+                    </Pressable>
+                </View>
+                <View style={styles.button_container}>
+                    <Pressable onPress={() => navigation.navigate("QuizApp")} style={styles.option_container}>
+                        <Text style={styles.text_style}> Learning Assessment </Text>
+                    </Pressable>
+                </View>
+                <View style={styles.button_container}>
+                    <Pressable style={styles.option_container}>
+                        <Text style={styles.text_style}> QR Scanner </Text>
+                    </Pressable>
+                </View>
+                <View style={styles.button_container}>
+                    <Pressable onPress={() => navigation.navigate("Bluetooth")} style={styles.option_container}>
+                        <Text style={styles.text_style}> Connect Bluetooth </Text>
+                    </Pressable>
+                </View>
+                <View style={styles.button_container}>
+                    <Pressable onPress={() => navigation.navigate("TourGuide")} style={styles.option_container}>
+                        <Text style={styles.text_style}> Controls </Text>
+                    </Pressable>
+                </View>
+  
+        {/* <View style = {styles.button_container}>
             <Pressable onPress={()=>navigation.navigate("DestinationQueue")} style= {styles.option_container} >
                  <Icon name = 'human-queue' size={40}/>
                 <Text style ={styles.text_style}>  Destination Queue </Text>
@@ -60,25 +87,14 @@ const HomeScreen = ({navigation}) => {
                 <Icon name = 'transit-detour' size={40} />
                 <Text style = {styles.text_style}> Tour Guide</Text>
             </Pressable>
-        </View>
+        </View> */}
         
-        <Image
-                 source ={require('../assets/images/DottedBG.png')}
-                 style = {{
-                    width: SIZES.width,
-                    height: 130,
-                    zIndex: -1,
-                    position: 'absolute',
-                    bottom: 0,
-                    left: 0,
-                    right: 0,
-                    opacity: 0.5
-                 }}
-                 resizeMode = {'contain'}
-                 />
-
+        
+    </ImageBackground>
     </View>
-    </ScrollView>
+    
+    /* </ScrollView> */
+
     
     )
 
@@ -87,31 +103,32 @@ const HomeScreen = ({navigation}) => {
 export default HomeScreen
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        height: '100%',
+        backgroundColor: '#000000'
+    },
     title_container: {
         alignItems: 'center',
-        paddingBottom: 17,
+        paddingBottom: 170,
         flexDirection: 'row',
         justifyContent: 'center'
         
     },
-    container: {
-        backgroundColor: COLORS.background,
-        flex: 1
+    backGroundImage: {
+        flex: 1.05,
+        width: '100%',
+        height: '100%',
     },
     option_container:  {
-        alignItems:'center',
-        justifyContent: 'center',
-        borderRadius: 14,
-        height: 75,
-        width: 300,
-        backgroundColor: '#6F8695',
-        borderColor:'#FAEBEFFF',
-        borderWidth: 3,
-        flexDirection: 'row'
+        padding: 10,
+        borderRadius: 20,
+        backgroundColor: '#7ca3bf',
+        opacity: 0.5
        
     },
     text_style: {
-        color: '#000000',
+        color: '#fff',
         fontWeight:'bold',
         fontSize: 20
     },
@@ -119,7 +136,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         paddingBottom: 30,
-        
-    
     }
+
 })
