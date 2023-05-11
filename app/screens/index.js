@@ -8,6 +8,7 @@ import DestinationControl from './DestinationControl';
 import Bluetooth from './Bluetooth';
 import LoadingScreen from './LoadingScreen';
 
+/* Export all the JS files that we worked with*/
 export {
     Quiz,
     DestinationQueue,

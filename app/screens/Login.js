@@ -4,10 +4,12 @@ import { useNavigation } from '@react-navigation/native'
 import {firebase} from './config'
 
 const Login = () => {
+    /* Values to store the functions current state*/
     const navigation = useNavigation()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    /* Function that awaits for autentication from firebase*/
     loginUser = async (email, password) => {
         try {
             await firebase.auth().signInWithEmailAndPassword(email, password)
@@ -17,6 +19,7 @@ const Login = () => {
         }
     }
 
+    /* Function in case the user forgets their password*/
     const forgetPassword = () => {
         firebase.auth().sendPasswordResetEmail(email)
         .then(() => {
@@ -25,6 +28,7 @@ const Login = () => {
             alert(error)
         })
     }
+    /* Returns the screen that shows the users the login page*/
     return (
         <View style={styles.container}>
             <Text style={{fontWeight:'bold', fontSize:45, color:'#fff'}}> 
@@ -54,16 +58,19 @@ const Login = () => {
                     
                 />
             </View>
+            {/* Button to log in */}
             <TouchableOpacity onPress={() => loginUser(email, password)}
                 style={styles.button}>
                 
                 <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
+            {/* Button to register for an account */}
             <TouchableOpacity  onPress={() => navigation.navigate('Registration')}
                 style={{marginTop:20}}>
                
                 <Text style={{ fontWeight: 'bold', fontSize: 16, color: '#fff'}}>Don't have an account? Register Now</Text>
             </TouchableOpacity>
+            {/* button in case the user forgets their password */}
             <TouchableOpacity  onPress={() => {forgetPassword()}}
                 style={{marginTop:20}}>
                
@@ -75,6 +82,8 @@ const Login = () => {
 
 export default Login
 
+
+/* Style sheet that styles all the button and features of the login page*/
 const styles = StyleSheet.create({
     container: {
         flex: 1,

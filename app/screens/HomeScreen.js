@@ -9,38 +9,49 @@ const HomeScreen = ({navigation}) => {
 
     const image = {uri: 'https://raw.githubusercontent.com/daxile6/CECS491B_ISSAC_PROJECT/main/app/assets/images/image.png'}
     return(
-    // <ScrollView>
+    /*creates the view for the home screen*/
     <View style = {styles.container}>
             <ImageBackground source={image} resizeMode='cover' style = {styles.backGroundImage}>
 
             <View style = {styles.title_container}>
             </View>
-                
+
+                 {/* Buttton for the destination Queue feature */}
                 <View style={styles.button_container}>
                     <Pressable onPress={() => navigation.navigate("DestinationQueue")} style={styles.option_container}>
                         <Text style={styles.text_style}> Destination Queue </Text>
                     </Pressable>
                 </View>
+
+                {/* Button for the destination control feature */}
                 <View style={styles.button_container}>
                     <Pressable onPress={() => navigation.navigate("DestinationControl")} style={styles.option_container}>
                         <Text style={styles.text_style}> Destination Control </Text>
                     </Pressable>
                 </View>
+
+                {/* Button for the learning assesment feature */}
                 <View style={styles.button_container}>
                     <Pressable onPress={() => navigation.navigate("QuizApp")} style={styles.option_container}>
                         <Text style={styles.text_style}> Learning Assessment </Text>
                     </Pressable>
                 </View>
+
+                {/* buttton for the qr scanner feature */}
                 <View style={styles.button_container}>
                     <Pressable style={styles.option_container}>
                         <Text style={styles.text_style}> QR Scanner </Text>
                     </Pressable>
                 </View>
+
+                {/* button for the bluetooth feature */}
                 <View style={styles.button_container}>
                     <Pressable onPress={() => navigation.navigate("Bluetooth")} style={styles.option_container}>
                         <Text style={styles.text_style}> Connect Bluetooth </Text>
                     </Pressable>
                 </View>
+
+                {/* button for the controls feature */}
                 <View style={styles.button_container}>
                     <Pressable onPress={() => navigation.navigate("TourGuide")} style={styles.option_container}>
                         <Text style={styles.text_style}> Controls </Text>
@@ -102,6 +113,7 @@ const HomeScreen = ({navigation}) => {
 
 export default HomeScreen
 
+// styles sheet  that styles the features of the buttons
 const styles = StyleSheet.create({
     container: {
         flex: 1,

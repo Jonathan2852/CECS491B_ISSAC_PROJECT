@@ -7,6 +7,7 @@ const LoadingScreen = ({navigation}) => {
     const image = {uri: 'https://raw.githubusercontent.com/daxile6/CECS491B_ISSAC_PROJECT/main/app/assets/images/LoadingPage_image.png'}
 
     return(
+        /* Returns a screen that prompts the user to continue*/
         <View style={styles.container}>
             <ImageBackground source={image} resizeMode="cover" style={styles.image}>
                 <View style={styles.button_container}>
@@ -19,6 +20,7 @@ const LoadingScreen = ({navigation}) => {
     );
 };
 
+/* style sheet that styles the loading screen*/
 const styles = StyleSheet.create({
     container: {
         flex: 1,
