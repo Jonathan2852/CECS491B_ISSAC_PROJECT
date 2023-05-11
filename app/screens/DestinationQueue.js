@@ -4,7 +4,7 @@ import {ImageBackground, View, Text, TextInput, TouchableOpacity, StyleSheet, Sc
 
 // function for the entire app
 const DestinationQueue = ({navigation}) => {
-  const image = {uri: ''}
+  const image = {uri: 'https://raw.githubusercontent.com/daxile6/CECS491B_ISSAC_PROJECT/main/app/assets/images/genericbackground.png'}
   const [locationName, setLocationName] = useState('');
   const [locations, setLocations] = useState([]);
 
@@ -37,15 +37,17 @@ const DestinationQueue = ({navigation}) => {
   */
   return (
     <View style={styles.container}>
-      <ImageBackground /*source = {image} resizeMode = "cover" style = {styles.image}*/>
+      <ImageBackground source = {image} resizeMode = "cover" style = {styles.image}>
       <Text style={styles.header}>Destination Queue</Text>
       <View style={styles.formContainer}>
         <Text style={styles.formHeader}>Add Location</Text>
         <TextInput
           style={styles.input}
+          placeholderTextColor={'white'}
           placeholder="Name of Location"
           onChangeText={setLocationName}
           value={locationName}
+          
         />
 
         <View style={styles.buttonContainer}>
@@ -59,15 +61,6 @@ const DestinationQueue = ({navigation}) => {
               <Text style={styles.submitButtonText}>Delete</Text>
             </TouchableOpacity>
         </View> 
-        {/* <Button
-          title = "Navigate to Quiz"
-          onPress ={() => navigation.navigate("QuizApp")}
-          />
-
-        <Button
-          title = "Navigate to Controller"
-          onPress ={() => navigation.navigate("Controller")}
-          /> */}
           
       </View>
       <ScrollView>
@@ -92,7 +85,6 @@ editing the buttons and layout of the screen
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
     backgroundColor: '#fff',
   },
   buttonContainer: {
@@ -129,17 +121,18 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginVertical: 20,
-    color : '#000000',
+    color : '#fff',
   },
   formContainer: {
     marginVertical: 20,
+    marginHorizontal: 40
   },
   formHeader: {
     fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 10,
-    color : '#000000'
+    color : '#fff'
   },
   image:{
     width: null,
@@ -149,11 +142,11 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    borderColor: 'black',
+    borderColor: 'white',
     borderWidth: 1,
     padding: 10,
     marginBottom: 10,
-    color: '#000000',
+    color: '#fff',
   },
   submitButton: {
     backgroundColor: '#649bed',
@@ -178,7 +171,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 10,
-    color: '#000000',
+    color: '#fff',
   },
   locationList: {
     marginTop: 10,
@@ -186,7 +179,8 @@ const styles = StyleSheet.create({
   location: {
     fontSize: 18,
     marginVertical: 5,
-    textAlign: 'center'
+    textAlign: 'center',
+    color: '#fff'
   },
 });
 

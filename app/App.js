@@ -50,7 +50,7 @@ function App(){
   if (initializing) return null;
   if (!user){
     return (
-      <Stack.Navigator >
+      <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name = "LoadingScreen" component={LoadingScreen}/>
         <Stack.Screen 
         name="Login" 
@@ -90,7 +90,7 @@ function App(){
     );
   }
   return (
-    <Stack.Navigator screenOptions={{headerShown: true}}>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       
       <Stack.Screen name = "HomeScreen" component={HomeScreen} 
       options={{
@@ -108,6 +108,8 @@ function App(){
         <Stack.Screen name = "DestinationQueue" component = {DestinationQueue}/>
         <Stack.Screen name = "QuizApp" component = {Quiz}/>
         <Stack.Screen name = "Controller2" component = {Controller2} />
+        <Stack.Screen name = "DestinationControl" component = {DestinationControl} />
+        <Stack.Screen name = "Bluetooth" component = {Bluetooth} />
     </Stack.Navigator>
   );
 }

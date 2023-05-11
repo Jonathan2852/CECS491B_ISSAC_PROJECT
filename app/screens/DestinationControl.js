@@ -1,13 +1,20 @@
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable prettier/prettier */
 import React, {useState} from "react";
-import { StyleSheet, Text,View, Pressable,Image, Modal, ScrollView} from "react-native";
+import { StyleSheet, Text,View, Pressable,Image, Modal, ScrollView, ImageBackground} from "react-native";
 import {COLORS, SIZES} from '../constants'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 const DestinationControl = ({navigation}) =>{
     const[actionTriggered,setActionTriggered] =  useState(false)
     const[showModal, setShowModal] = useState(false);
+    const image = {uri: 'https://raw.githubusercontent.com/daxile6/CECS491B_ISSAC_PROJECT/main/app/assets/images/genericbackground.png'}
+
     return (
     <View style = {styles.container}>
+        <ImageBackground source={image} resizeMode="cover" style={styles.image}>
+
+        
             {/* Creates the title */}
             <View style= {styles.title_container}>
                 <Text style= {{
@@ -20,18 +27,18 @@ const DestinationControl = ({navigation}) =>{
             </View>
             {/* Creates the view for the direction */}
             <View style ={{
-                alignItems: 'center',
-                paddingBottom: 15,
-                borderColor: '#FFFFFF',
-                borderWidth: 3,
-                borderRadius: 6,
-                backgroundColor: '#C3E3EB',
-                width: 400,
-                marginLeft: 7
+                // alignItems: 'center',
+                // paddingBottom: 15,
+                // borderColor: '#FFFFFF',
+                // borderWidth: 3,
+                // borderRadius: 6,
+                // backgroundColor: '#C3E3EB',
+                // width: 400,
+                // marginLeft: 7
                 
 
             }}>
-                <Text style={{color: '#000000', fontWeight: 'bold'}}>Choose any of the following location to direct the bot.</Text>
+                {/* <Text style={{color: '#000000', fontWeight: 'bold'}}>Choose any of the following location to direct the bot.</Text> */}
             </View>
 
             {/* Spacing for the buttons */}
@@ -113,7 +120,7 @@ const DestinationControl = ({navigation}) =>{
 
              {/* Creates the second row for free manuel and the question*/}
             <View style = {{flexDirection: 'row'}}>
-                <Pressable onPress={()=>navigation.navigate("Controller2")} style ={styles.option_container}>
+                <Pressable style ={styles.option_container}>
                 <Icon name = 'google-downasaur' size={40} color="#000000"/>
                     <Text style = {{
                         fontSize: 30,
@@ -311,7 +318,7 @@ const DestinationControl = ({navigation}) =>{
                         null }
             </Modal>
             
-
+        </ImageBackground>                                   
         </View>
     
 
@@ -328,6 +335,7 @@ const styles = StyleSheet.create({
     },
     title_container: {
         alignItems: 'center',
+        paddingTop: 40,
         
     },
     option_container:  {
@@ -351,7 +359,12 @@ const styles = StyleSheet.create({
         height: 70,
         width: 100,
         backgroundColor: '#D4AF37'
-    }
+    },
+    image: {
+        flex: 1.05,
+        width: '100%',
+        height: '100%',
+    },
 })
     
 
