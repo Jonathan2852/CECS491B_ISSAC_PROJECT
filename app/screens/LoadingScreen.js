@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         paddingBottom: 30,
+        paddingTop: 675,
     },
     option_container: {
         padding: 10,

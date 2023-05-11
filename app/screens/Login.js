@@ -55,6 +55,7 @@ const Login = () => {
                     autoCorrect={false}
                     placeholderTextColor="#808080"
                     color="#fff"
+                    secureTextEntry={true}
                     
                 />
             </View>
